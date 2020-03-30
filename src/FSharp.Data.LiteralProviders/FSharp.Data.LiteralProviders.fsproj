@@ -25,6 +25,7 @@
     </None>
     <None Include="paket.references" />
     <EmbeddedResource Include="paket.template" />
+    <Reference Include="netstandard" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
