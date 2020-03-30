@@ -4,6 +4,7 @@ open System
 open System.Collections
 open System.IO
 open ProviderImplementation.ProvidedTypes
+open DotNetEnv
 
 let DefaultEnvFileName = ".env"
 let LevelsToSearchForEnvFile = 3
