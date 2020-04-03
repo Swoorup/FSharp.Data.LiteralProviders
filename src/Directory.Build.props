@@ -5,7 +5,8 @@
     <Authors>Loic Denuziere</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/tarmil/FSharp.Data.LiteralProviders</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/tarmil/FSharp.LiteralProviders.git</RepositoryUrl>
+    <RepositoryUrl>git@github.com:Swoorup/FSharp.Data.LiteralProviders.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <Tags>F#;FSharp;Environment;TypeProvider</Tags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>

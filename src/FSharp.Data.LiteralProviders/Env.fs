@@ -38,11 +38,15 @@ let createEnv asm ns =
 
 let addEnvOrDefault asm ns (ty: ProvidedTypeDefinition) =
     ty.DefineStaticParameters(
-        [ProvidedStaticParameter("Name", typeof<string>); ProvidedStaticParameter("DefaultValue", typeof<string>, "")],
+        [ 
+            ProvidedStaticParameter("Name", typeof<string>); 
+            ProvidedStaticParameter("DefaultValue", typeof<string>, "");
+            ProvidedStaticParameter("LoadEnvFile", typeof<bool>, true);
+        ],
         fun tyName args ->
             let ty = ProvidedTypeDefinition(asm, ns, tyName, None)
             let name = args.[0] :?> string
-            let envValue = Environment.GetEnvironmentVariable(name)
+            let envValue = DotNetEnv.Env.GetString(name)
             let isSet = not (isNull envValue)
             let value = if isSet then envValue else args.[1] :?> string
             ProvidedField.Literal("Name", typeof<string>, name) |> ty.AddMember
